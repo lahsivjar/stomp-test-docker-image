@@ -10,7 +10,13 @@ The project provides a basic [springboot](https://spring.io/projects/spring-boot
 ## How to build?
 
 - Use `mvn install` to build the project
-- Use `mvn dockerfile:build -Ddocker.image.prefix=<image_prefix>` for building the docker image
+- Use `mvn dockerfile:build -Ddocker.image.prefix=<image_prefix> -Dport=<exposed_port>` for building the docker image
+
+## How to run?
+
+```
+docker run -p <exposed_port>:8080 <image_prefix>/stomp-test-docker-image
+```
 
 ## License
 
