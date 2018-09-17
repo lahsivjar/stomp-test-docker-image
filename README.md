@@ -6,11 +6,17 @@ The project provides a basic [springboot](https://spring.io/projects/spring-boot
 
 - STOMP endpoint with sockjs at `/handler`
 - Health check endpoint at `/health`
+- A ping pong message controller. When a message is sent to `/app/ping` topic then it responds with a pong in the following format:
+    ```
+    {
+      "msg": "pong"
+    }
+    ```
 
 ## How to build?
 
 - Use `mvn install` to build the project
-- Use `mvn dockerfile:build -Ddocker.image.prefix=<image_prefix> -Dport=<exposed_port>` for building the docker image
+- Use `mvn dockerfile:build -Ddocker.image.prefix=<image_prefix>` for building the docker image
 
 ## How to run?
 
