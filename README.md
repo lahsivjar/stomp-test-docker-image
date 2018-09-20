@@ -6,13 +6,14 @@ The project provides a basic [springboot](https://spring.io/projects/spring-boot
 
 - STOMP endpoint with sockjs at `/handler`
 - Health check endpoint at `/health`
-- A ping pong message controller with text response. When a message is sent to `/app/text/ping` topic then it responsds with a text `pong`
-- A ping pong message controller with json response. When a message is sent to `/app/json/ping` topic then it responds with a pong in the following format:
+- A ping pong message controller with text response. When a message is sent to `/app/text/ping` topic then it responsds with a text `pong` on `/topic/ping` topic
+- A ping pong message controller with json response. When a message is sent to `/app/json/ping` topic then it responds with a pong on `/topic/ping` topic in the following format:
     ```
     {
       "msg": "pong"
     }
     ```
+- An error endpoint. Sending a message on this endpoint at `/app/err` returns an ERROR STOMP frame which will also terminate the connection
 
 ## How to build?
 
